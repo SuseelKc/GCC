@@ -48,5 +48,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+// Newsletter Routes
+Route::post('/newsletter/subscribe', [App\Http\Controllers\NewsletterController::class, 'subscribe'])
+    ->name('newsletter.subscribe');
+
 // Authentication Routes (Laravel Breeze)
 require __DIR__.'/auth.php';

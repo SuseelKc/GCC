@@ -167,7 +167,7 @@
             <!-- Footer -->
             <footer class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 shadow-sm mt-auto transition-colors duration-200">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                         <!-- Brand Section -->
                         <div class="space-y-4">
                             <h3 class="text-lg font-semibold text-gray-900 dark:text-white">GCC Forums</h3>
@@ -212,6 +212,35 @@
                                     <a href="#" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Cookie Policy</a>
                                 </li>
                             </ul>
+                        </div>
+
+                        <!-- Newsletter Subscription -->
+                        <div class="space-y-4">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Stay Updated</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">
+                                Subscribe to our newsletter for the latest updates, security insights, and community news.
+                            </p>
+                            <form action="{{ route('newsletter.subscribe') }}" method="POST" class="mt-4 space-y-3">
+                                @csrf
+                                <div class="relative">
+                                    <input type="email" 
+                                           name="email" 
+                                           placeholder="Enter your email" 
+                                           required
+                                           class="w-full px-4 py-2 text-sm text-gray-900 dark:text-white bg-white dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 focus:border-indigo-500 dark:focus:border-indigo-400 transition-colors duration-200"
+                                           :class="{ 'dark:bg-gray-700': darkMode }">
+                                </div>
+                                <button type="submit" 
+                                        class="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 dark:bg-indigo-500 dark:hover:bg-indigo-600 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:focus:ring-offset-gray-800">
+                                    Subscribe
+                                </button>
+                                @error('email')
+                                    <p class="text-sm text-red-600 dark:text-red-400">{{ $message }}</p>
+                                @enderror
+                                @if (session('newsletter-success'))
+                                    <p class="text-sm text-green-600 dark:text-green-400">{{ session('newsletter-success') }}</p>
+                                @endif
+                            </form>
                         </div>
                     </div>
 
