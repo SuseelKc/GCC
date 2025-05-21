@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
             <div class="text-center">
                 <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    Global Cybersecurity Community
+                    Empowering Global Cybersecurity Collaboration
                 </h1>
                 <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                    Join the world's leading cybersecurity community to share knowledge, drive innovation, and combat evolving cyber threats together.
+                    The Global Cybersecurity Community Forum (GCCF) is an international platform dedicated to fostering collaboration, knowledge sharing, and innovation in cybersecurity. As cyber threats continue to evolve, the need for a collective approach to securing digital infrastructures has never been more critical. GCCF brings together cybersecurity professionals, researchers, policymakers, and industry leaders to discuss emerging trends, share best practices, and drive the global cybersecurity agenda forward.
                 </p>
                 <div class="mt-10 flex justify-center gap-4">
                     @auth
@@ -38,22 +38,22 @@
             <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <!-- Forums Feature -->
                 <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Community Forums</div>
-                    <p class="text-gray-600 mb-4">Engage in discussions, share insights, and learn from cybersecurity experts worldwide.</p>
+                    <div class="text-lg font-medium text-gray-900 mb-2">Vision</div>
+                    <p class="text-gray-600 mb-4">To create a globally connected and resilient cybersecurity community that empowers individuals and organizations with the knowledge, tools, and strategies to combat cyber threats effectively.</p>
                     <a href="{{ route('forums') }}" class="text-indigo-600 hover:text-indigo-500">Browse Forums →</a>
                 </div>
 
                 <!-- Resources Feature -->
                 <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Learning Resources</div>
-                    <p class="text-gray-600 mb-4">Access curated cybersecurity resources, tutorials, and best practices.</p>
+                    <div class="text-lg font-medium text-gray-900 mb-2">Knowledge Sharing</div>
+                    <p class="text-gray-600 mb-4">Access insights and resources to enhance your understanding of contemporary cybersecurity challenges and solutions.</p>
                     <a href="{{ route('resources') }}" class="text-indigo-600 hover:text-indigo-500">Explore Resources →</a>
                 </div>
 
                 <!-- Community Feature -->
                 <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Expert Network</div>
-                    <p class="text-gray-600 mb-4">Connect with cybersecurity professionals and expand your professional network.</p>
+                    <div class="text-lg font-medium text-gray-900 mb-2">Expert Discussions</div>
+                    <p class="text-gray-600 mb-4">Engage with professionals on trends, technology advancements, and policy frameworks shaping the cybersecurity landscape.</p>
                     <a href="{{ route('about') }}" class="text-indigo-600 hover:text-indigo-500">Learn More →</a>
                 </div>
             </div>
@@ -63,7 +63,7 @@
     <!-- Latest Discussions -->
     <div class="py-12 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Latest Discussions</h2>
+            <h2 class="text-2xl font-bold text-gray-900 mb-8">Cybersecurity Projects</h2>
             <div class="bg-white shadow overflow-hidden sm:rounded-md">
                 <ul role="list" class="divide-y divide-gray-200">
                     <!-- Placeholder for forum posts -->

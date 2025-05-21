@@ -63,17 +63,23 @@
             <!-- Navigation -->
             <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div class="flex justify-between h-16">
+                    <div class="flex justify-between h-25">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
+
                                 <a href="{{ route('home') }}" class="text-xl font-bold text-indigo-600 dark:text-indigo-300 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200">
-                                    GCC Forums
+                                    <img src="{{ asset('storage/logo.png') }}"  style="height: 85px; width: 230px;">
                                 </a>
+
+
+                                {{-- <a href="{{ route('home') }}" class="text-xl font-bold text-indigo-600 dark:text-indigo-300 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200">
+                                    GCC Forums
+                                </a> --}}
                             </div>
 
                             <!-- Navigation Links -->
-                            <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex pt-5">
+                            <div class="hidden space-x-10 sm:-my-px sm:ml-10 sm:flex pt-10">
                                 <a href="{{ route('home') }}" 
                                    class="nav-link {{ request()->routeIs('home') ? 'active' : '' }}">
                                     Home
