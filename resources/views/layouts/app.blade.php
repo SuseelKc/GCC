@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" x-data="{ darkMode: localStorage.getItem('darkMode') === 'true' }" x-init="$watch('darkMode', val => { localStorage.setItem('darkMode', val); document.documentElement.classList.toggle('dark', val) })" :class="{ 'dark': darkMode }">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,28 +14,60 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+        <!-- Alpine.js -->
+        <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+        <script>
+            // Check for saved theme preference, otherwise use system preference
+            if (localStorage.getItem('darkMode') === null) {
+                localStorage.setItem('darkMode', window.matchMedia('(prefers-color-scheme: dark)').matches);
+            }
+            // Apply the theme on page load
+            if (localStorage.getItem('darkMode') === 'true') {
+                document.documentElement.classList.add('dark');
+            }
+        </script>
+
         <style>
             .nav-link {
                 @apply inline-flex items-center px-1 pt-1 text-sm font-medium border-b-2 transition-colors duration-200;
             }
             .nav-link.active {
-                @apply border-indigo-500 text-indigo-600;
+                @apply border-indigo-500 text-indigo-600 dark:text-indigo-300 dark:border-indigo-400;
             }
             .nav-link:not(.active) {
-                @apply border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300;
+                @apply border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 
+                       dark:text-gray-300 dark:hover:text-white dark:hover:border-gray-500;
+            }
+
+            /* Dark mode text styles */
+            .dark .text-gray-900 {
+                @apply text-white;
+            }
+            .dark .text-gray-800 {
+                @apply text-gray-100;
+            }
+            .dark .text-gray-700 {
+                @apply text-gray-200;
+            }
+            .dark .text-gray-600 {
+                @apply text-gray-300;
+            }
+            .dark .text-gray-500 {
+                @apply text-gray-400;
             }
         </style>
     </head>
-    <body class="font-sans antialiased bg-gray-100">
+    <body class="font-sans antialiased bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-200">
         <div class="min-h-screen flex flex-col">
             <!-- Navigation -->
-            <nav class="bg-white border-b border-gray-100 shadow-sm">
+            <nav class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 shadow-sm transition-colors duration-200">
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div class="flex justify-between h-16">
                         <div class="flex">
                             <!-- Logo -->
                             <div class="shrink-0 flex items-center">
-                                <a href="{{ route('home') }}" class="text-xl font-bold text-indigo-600 hover:text-indigo-700 transition-colors duration-200">
+                                <a href="{{ route('home') }}" class="text-xl font-bold text-indigo-600 dark:text-indigo-300 hover:text-indigo-700 dark:hover:text-indigo-200 transition-colors duration-200">
                                     GCC Forums
                                 </a>
                             </div>
@@ -65,13 +97,20 @@
                             </div>
                         </div>
 
-                        <!-- Right Side - Only show for authenticated users -->
-                        @auth
-                            <div class="hidden sm:flex sm:items-center sm:ml-6">
+                        <!-- Right Side -->
+                        <div class="hidden sm:flex sm:items-center sm:ml-6 space-x-4">
+                            <!-- Theme Toggle -->
+                            <button @click="darkMode = !darkMode" 
+                                    x-text="darkMode ? '🌙' : '☀️'"
+                                    class="p-2 rounded-lg text-gray-500 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none transition-colors duration-200"
+                                    aria-label="Toggle dark mode">
+                            </button>
+
+                            @auth
                                 <div class="ml-3 relative">
                                     <x-dropdown align="right" width="48">
                                         <x-slot name="trigger">
-                                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 bg-white hover:text-indigo-600 focus:outline-none transition ease-in-out duration-150">
+                                            <button class="inline-flex items-center px-3 py-2 border border-transparent text-sm leading-4 font-medium rounded-md text-gray-500 dark:text-gray-300 bg-white dark:bg-gray-800 hover:text-indigo-600 dark:hover:text-indigo-300 focus:outline-none transition ease-in-out duration-150">
                                                 <div>{{ Auth::user()->name }}</div>
                                                 <div class="ml-1">
                                                     <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
@@ -81,11 +120,11 @@
                                             </button>
                                         </x-slot>
 
-                                        <x-slot name="content">
-                                            <x-dropdown-link :href="route('dashboard')" class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                                        <x-slot name="content" class="bg-white dark:bg-gray-800">
+                                            <x-dropdown-link :href="route('dashboard')" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                                                 {{ __('Dashboard') }}
                                             </x-dropdown-link>
-                                            <x-dropdown-link :href="route('profile.edit')" class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                                            <x-dropdown-link :href="route('profile.edit')" class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                                                 {{ __('Profile') }}
                                             </x-dropdown-link>
                                             <form method="POST" action="{{ route('logout') }}">
@@ -93,15 +132,15 @@
                                                 <x-dropdown-link :href="route('logout')"
                                                         onclick="event.preventDefault();
                                                                     this.closest('form').submit();"
-                                                        class="text-gray-700 hover:text-indigo-600 hover:bg-gray-50">
+                                                        class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300 hover:bg-gray-50 dark:hover:bg-gray-700">
                                                     {{ __('Log Out') }}
                                                 </x-dropdown-link>
                                             </form>
                                         </x-slot>
                                     </x-dropdown>
                                 </div>
-                            </div>
-                        @endauth
+                            @endauth
+                        </div>
                     </div>
                 </div>
             </nav>
@@ -110,13 +149,13 @@
             <main class="flex-grow py-12">
                 <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                     @if (session('success'))
-                        <div class="mb-4 bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
+                        <div class="mb-4 bg-green-100 dark:bg-green-900/50 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-300 px-4 py-3 rounded relative" role="alert">
                             <span class="block sm:inline">{{ session('success') }}</span>
                         </div>
                     @endif
 
                     @if (session('error'))
-                        <div class="mb-4 bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                        <div class="mb-4 bg-red-100 dark:bg-red-900/50 border border-red-400 dark:border-red-700 text-red-700 dark:text-red-300 px-4 py-3 rounded relative" role="alert">
                             <span class="block sm:inline">{{ session('error') }}</span>
                         </div>
                     @endif
@@ -126,59 +165,59 @@
             </main>
 
             <!-- Footer -->
-            <footer class="bg-white border-t border-gray-100 shadow-sm mt-auto">
+            <footer class="bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 shadow-sm mt-auto transition-colors duration-200">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                         <!-- Brand Section -->
                         <div class="space-y-4">
-                            <h3 class="text-lg font-semibold text-gray-900">GCC Forums</h3>
-                            <p class="text-sm text-gray-600">
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">GCC Forums</h3>
+                            <p class="text-sm text-gray-600 dark:text-gray-300">
                                 Building a stronger, more secure digital world through collaboration and knowledge sharing.
                             </p>
                         </div>
 
                         <!-- Quick Links -->
                         <div class="space-y-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Quick Links</h3>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Quick Links</h3>
                             <ul class="space-y-2">
                                 <li>
-                                    <a href="{{ route('home') }}" class="text-sm text-gray-600 hover:text-indigo-600">Home</a>
+                                    <a href="{{ route('home') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Home</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('forums') }}" class="text-sm text-gray-600 hover:text-indigo-600">Forums</a>
+                                    <a href="{{ route('forums') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Forums</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('resources') }}" class="text-sm text-gray-600 hover:text-indigo-600">Resources</a>
+                                    <a href="{{ route('resources') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Resources</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}" class="text-sm text-gray-600 hover:text-indigo-600">About</a>
+                                    <a href="{{ route('about') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">About</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('contact') }}" class="text-sm text-gray-600 hover:text-indigo-600">Contact</a>
+                                    <a href="{{ route('contact') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Contact</a>
                                 </li>
                             </ul>
                         </div>
 
                         <!-- Legal Links -->
                         <div class="space-y-4">
-                            <h3 class="text-lg font-semibold text-gray-900">Legal</h3>
+                            <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Legal</h3>
                             <ul class="space-y-2">
                                 <li>
-                                    <a href="#" class="text-sm text-gray-600 hover:text-indigo-600">Privacy Policy</a>
+                                    <a href="#" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Privacy Policy</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-sm text-gray-600 hover:text-indigo-600">Terms of Service</a>
+                                    <a href="#" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Terms of Service</a>
                                 </li>
                                 <li>
-                                    <a href="#" class="text-sm text-gray-600 hover:text-indigo-600">Cookie Policy</a>
+                                    <a href="#" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Cookie Policy</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
 
                     <!-- Copyright -->
-                    <div class="mt-8 pt-8 border-t border-gray-100">
-                        <p class="text-sm text-gray-500 text-center">
+                    <div class="mt-8 pt-8 border-t border-gray-100 dark:border-gray-700">
+                        <p class="text-sm text-gray-500 dark:text-gray-400 text-center">
                             &copy; {{ date('Y') }} GCC Forums. All rights reserved.
                         </p>
                     </div>
