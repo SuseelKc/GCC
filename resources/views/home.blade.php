@@ -5,31 +5,78 @@
 @section('content')
 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
     <!-- Hero Section -->
-    <div class="relative bg-gray-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
-                    Empowering Global Cybersecurity Collaboration
-                </h1>
-                <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
-                    The Global Cybersecurity Community Forum (GCCF) is an international platform dedicated to fostering collaboration, knowledge sharing, and innovation in cybersecurity. As cyber threats continue to evolve, the need for a collective approach to securing digital infrastructures has never been more critical. GCCF brings together cybersecurity professionals, researchers, policymakers, and industry leaders to discuss emerging trends, share best practices, and drive the global cybersecurity agenda forward.
-                </p>
-                <div class="mt-10 flex justify-center gap-4">
-                    @auth
-                        <a href="{{ route('dashboard') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
-                            Go to Dashboard
-                        </a>
-                    @else
-                        <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
-                            Join Community
-                        </a>
-                        <a href="{{ route('login') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
-                            Sign In
-                        </a>
-                    @endauth
+        {{-- <div class="relative bg-gray-900 text-white">
+
+                <video autoplay loop muted>
+                    <source src="{{ asset('storage/video1.mp4') }}"  type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                <div class="text-center">
+                    <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                        Empowering Global Cybersecurity Collaboration
+                    </h1>
+                    <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+                        The Global Cybersecurity Community Forum (GCCF) is an international platform dedicated to fostering collaboration, knowledge sharing, and innovation in cybersecurity. As cyber threats continue to evolve, the need for a collective approach to securing digital infrastructures has never been more critical. GCCF brings together cybersecurity professionals, researchers, policymakers, and industry leaders to discuss emerging trends, share best practices, and drive the global cybersecurity agenda forward.
+                    </p>
+                    <div class="mt-10 flex justify-center gap-4">
+                        @auth
+                            <a href="{{ route('dashboard') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                                Go to Dashboard
+                            </a>
+                        @else
+                            <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                                Join Community
+                            </a>
+                            <a href="{{ route('login') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
+                                Sign In
+                            </a>
+                        @endauth
+                    </div>
                 </div>
             </div>
+        </div> --}}
+
+        <div class="relative bg-gray-100 text-white overflow-hidden">
+
+                <!-- Background Video -->
+                <video autoplay loop muted playsinline class="absolute top-0 left-0 w-full h-full object-cover z-0">
+                    <source src="{{ asset('storage/video1.mp4') }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+
+                <!-- Overlay to darken video slightly for better text readability -->
+                <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 z-10"></div>
+
+                <!-- Foreground Content -->
+                <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
+                    <div class="text-center">
+                        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+                            Empowering Global Cybersecurity Collaboration
+                        </h1>
+                        <p class="mt-6 text-xl text-gray-300 max-w-3xl mx-auto">
+                            The Global Cybersecurity Community Forum (GCCF) is an international platform dedicated to fostering collaboration, knowledge sharing, and innovation in cybersecurity. As cyber threats continue to evolve, the need for a collective approach to securing digital infrastructures has never been more critical. GCCF brings together cybersecurity professionals, researchers, policymakers, and industry leaders to discuss emerging trends, share best practices, and drive the global cybersecurity agenda forward.
+                        </p>
+                        <div class="mt-10 flex justify-center gap-4">
+                            @auth
+                                <a href="{{ route('dashboard') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                                    Go to Dashboard
+                                </a>
+                            @else
+                                <a href="{{ route('register') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-gray-900 bg-white hover:bg-gray-50">
+                                    Join Community
+                                </a>
+                                <a href="{{ route('login') }}" class="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-gray-800 hover:bg-gray-700">
+                                    Sign In
+                                </a>
+                            @endauth
+                        </div>
+                    </div>
+                </div>
+
         </div>
+
     </div>
 
     <!-- Features Section -->
