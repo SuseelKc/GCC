@@ -80,7 +80,7 @@
     </div>
 
     <!-- Features Section -->
-    <div class="py-12 bg-white">
+    <div class="py-12 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <!-- Forums Feature -->
