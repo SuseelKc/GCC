@@ -108,36 +108,222 @@
     </div>
 
     <!-- Latest Discussions -->
-    <div class="py-12 bg-gray-50">
+    <div class="py-12 bg-gray-50 dark:bg-gray-800">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl font-bold text-gray-900 mb-8">Cybersecurity Projects</h2>
-            <div class="bg-white shadow overflow-hidden sm:rounded-md">
-                <ul role="list" class="divide-y divide-gray-200">
-                    <!-- Placeholder for forum posts -->
-                    <li class="px-6 py-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex-1 min-w-0">
-                                <p class="text-sm font-medium text-indigo-600 truncate">
-                                    Getting Started with Cybersecurity
-                                </p>
-                                <p class="text-sm text-gray-500">
-                                    Posted by John Doe • 2 hours ago
-                                </p>
-                            </div>
-                            <div class="ml-4 flex-shrink-0">
-                                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                    New
-                                </span>
-                            </div>
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Cybersecurity Projects</h2>
+                <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                    Explore cutting-edge cybersecurity initiatives and collaborative projects that are shaping the future of digital security.
+                </p>
+            </div>
+            
+            <!-- Project Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Project Card 1: Threat Intelligence Platform -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-blue-600/90 to-purple-700/90 z-0">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <!-- Abstract cybersecurity pattern overlay -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse">
+                                        <path d="M 10 0 L 0 0 0 10" fill="none" stroke="white" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100" height="100" fill="url(#grid)"/>
+                            </svg>
                         </div>
-                    </li>
-                    <!-- Add more forum posts here -->
-                </ul>
-                <div class="px-6 py-4 bg-gray-50 border-t border-gray-200">
-                    <a href="{{ route('forums') }}" class="text-sm font-medium text-indigo-600 hover:text-indigo-500">
-                        View all discussions →
-                    </a>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10 p-8 h-80 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Threat Intelligence Platform</h3>
+                            </div>
+                            <p class="text-gray-200 text-lg leading-relaxed">
+                                Advanced threat detection and analysis system that leverages machine learning to identify and respond to emerging cyber threats in real-time.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">AI/ML</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Real-time</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-white hover:text-blue-200 transition-colors">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
                 </div>
+
+                <!-- Project Card 2: Zero Trust Architecture -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-green-600/90 to-teal-700/90 z-0">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <!-- Abstract cybersecurity pattern overlay -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="circles" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <circle cx="10" cy="10" r="2" fill="white"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100" height="100" fill="url(#circles)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10 p-8 h-80 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Zero Trust Architecture</h3>
+                            </div>
+                            <p class="text-gray-200 text-lg leading-relaxed">
+                                Comprehensive security framework implementing "never trust, always verify" principles across all network resources and user access points.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Security</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Framework</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-white hover:text-green-200 transition-colors">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Incident Response System -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-red-600/90 to-orange-700/90 z-0">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <!-- Abstract cybersecurity pattern overlay -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="hexagons" width="20" height="20" patternUnits="userSpaceOnUse">
+                                        <polygon points="10,1 19,6 19,14 10,19 1,14 1,6" fill="none" stroke="white" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100" height="100" fill="url(#hexagons)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10 p-8 h-80 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Incident Response System</h3>
+                            </div>
+                            <p class="text-gray-200 text-lg leading-relaxed">
+                                Automated incident detection and response platform that orchestrates security workflows and enables rapid threat containment and recovery.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Automation</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Response</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-white hover:text-red-200 transition-colors">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4: Blockchain Security -->
+                <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2">
+                    <!-- Background Image -->
+                    <div class="absolute inset-0 bg-gradient-to-br from-purple-600/90 to-indigo-700/90 z-0">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                        <!-- Abstract cybersecurity pattern overlay -->
+                        <div class="absolute inset-0 opacity-20">
+                            <svg class="w-full h-full" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <pattern id="blocks" width="15" height="15" patternUnits="userSpaceOnUse">
+                                        <rect x="0" y="0" width="15" height="15" fill="none" stroke="white" stroke-width="0.5"/>
+                                    </pattern>
+                                </defs>
+                                <rect width="100" height="100" fill="url(#blocks)"/>
+                            </svg>
+                        </div>
+                    </div>
+                    
+                    <!-- Content -->
+                    <div class="relative z-10 p-8 h-80 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center mb-4">
+                                <div class="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center mr-4">
+                                    <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+                                    </svg>
+                                </div>
+                                <h3 class="text-2xl font-bold text-white">Blockchain Security</h3>
+                            </div>
+                            <p class="text-gray-200 text-lg leading-relaxed">
+                                Decentralized security solutions leveraging blockchain technology for immutable audit trails, secure identity management, and tamper-proof data integrity.
+                            </p>
+                        </div>
+                        
+                        <div class="flex items-center justify-between">
+                            <div class="flex space-x-2">
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Blockchain</span>
+                                <span class="px-3 py-1 bg-white/20 text-white text-sm rounded-full">Decentralized</span>
+                            </div>
+                            <a href="#" class="inline-flex items-center text-white hover:text-purple-200 transition-colors">
+                                Learn More
+                                <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center">
+                <a href="{{ route('forums') }}" class="inline-flex items-center px-8 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-lg transition-colors duration-200 shadow-lg hover:shadow-xl">
+                    Explore All Projects
+                    <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                    </svg>
+                </a>
             </div>
         </div>
     </div>
