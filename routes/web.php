@@ -2,19 +2,21 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\AboutController;
 use App\Http\Controllers\ForumController;
 use App\Http\Controllers\ResourceController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\NewsController;
+use App\Http\Controllers\EventsController;
 use Illuminate\Support\Facades\Route;
 
 // Public Routes
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/forums', [ForumController::class, 'index'])->name('forums');
 Route::get('/resources', [ResourceController::class, 'index'])->name('resources');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/news', [NewsController::class, 'index'])->name('news');
+Route::get('/events', [EventsController::class, 'index'])->name('events');
 
 // Forum Routes
 Route::middleware(['auth', 'verified'])->group(function () {

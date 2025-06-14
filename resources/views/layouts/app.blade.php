@@ -92,12 +92,16 @@
                                    class="nav-link {{ request()->routeIs('resources*') ? 'active' : '' }}">
                                     Resources
                                 </a>
-                                <a href="{{ route('about') }}" 
-                                   class="nav-link {{ request()->routeIs('about') ? 'active' : '' }}">
-                                    About
+                                <a href="{{ route('news') }}" 
+                                   class="nav-link {{ request()->routeIs('news') ? 'active' : '' }}">
+                                    News
+                                </a>
+                                <a href="{{ route('events') }}" 
+                                   class="nav-link {{ request()->routeIs('events') ? 'active' : '' }}">
+                                    Events
                                 </a>
                                 <a href="{{ route('contact') }}" 
-                                   class="nav-link {{ request()->routeIs('contact*') ? 'active' : '' }}">
+                                   class="nav-link {{ request()->routeIs('contact') ? 'active' : '' }}">
                                     Contact
                                 </a>
                             </div>
@@ -205,7 +209,10 @@
                                     <a href="{{ route('resources') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Resources</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('about') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">About</a>
+                                    <a href="{{ route('news') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">News</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('events') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Events</a>
                                 </li>
                                 <li>
                                     <a href="{{ route('contact') }}" class="text-sm text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-300">Contact</a>

@@ -101,7 +101,7 @@
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 shadow-lg">
                     <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Expert Discussions</div>
                     <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Engage with professionals on trends, technology advancements, and policy frameworks shaping the cybersecurity landscape.</p>
-                    <a href="{{ route('about') }}" class="text-indigo-600 hover:text-indigo-500">Learn More →</a>
+                    <a href="{{ route('news') }}" class="text-indigo-600 hover:text-indigo-500">Learn More →</a>
                 </div>
             </div>
         </div>
