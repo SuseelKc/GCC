@@ -84,23 +84,23 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid grid-cols-1 gap-8 md:grid-cols-3">
                 <!-- Forums Feature -->
-                <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Vision</div>
-                    <p class="text-gray-600 mb-4">To create a globally connected and resilient cybersecurity community that empowers individuals and organizations with the knowledge, tools, and strategies to combat cyber threats effectively.</p>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Vision</div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">To create a globally connected and resilient cybersecurity community that empowers individuals and organizations with the knowledge, tools, and strategies to combat cyber threats effectively.</p>
                     <a href="{{ route('forums') }}" class="text-indigo-600 hover:text-indigo-500">Browse Forums →</a>
                 </div>
 
                 <!-- Resources Feature -->
-                <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Knowledge Sharing</div>
-                    <p class="text-gray-600 mb-4">Access insights and resources to enhance your understanding of contemporary cybersecurity challenges and solutions.</p>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Knowledge Sharing</div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Access insights and resources to enhance your understanding of contemporary cybersecurity challenges and solutions.</p>
                     <a href="{{ route('resources') }}" class="text-indigo-600 hover:text-indigo-500">Explore Resources →</a>
                 </div>
 
                 <!-- Community Feature -->
-                <div class="relative p-6 bg-white rounded-lg border border-gray-200">
-                    <div class="text-lg font-medium text-gray-900 mb-2">Expert Discussions</div>
-                    <p class="text-gray-600 mb-4">Engage with professionals on trends, technology advancements, and policy frameworks shaping the cybersecurity landscape.</p>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                    <div class="text-3xl font-bold text-gray-900 dark:text-white mb-4">Expert Discussions</div>
+                    <p class="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">Engage with professionals on trends, technology advancements, and policy frameworks shaping the cybersecurity landscape.</p>
                     <a href="{{ route('about') }}" class="text-indigo-600 hover:text-indigo-500">Learn More →</a>
                 </div>
             </div>
